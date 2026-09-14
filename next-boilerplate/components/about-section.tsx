@@ -29,7 +29,7 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
 const paragraphs = [
   "AK Research Lab is an AI research lab built on deep technical expertise in software engineering and AI model training. We operate at the intersection of research and infrastructure, running our own GPU compute, training models hands-on, and using that same infrastructure to ship real products, including our own AI-powered accounting software.",
   "We don't treat research and engineering as separate functions. Our expertise spans the full stack: GPU infrastructure and compute management, applied AI model training, and production-grade software engineering research. That combination is what lets us provide reliable compute access to other teams, contribute meaningful research to the software engineering field, and build AI-powered products of our own.",
-  "In short: we're a lab that builds what it researches, and gives other teams the infrastructure and expertise to do the same.",
+  "In short: we're a lab that builds what it researches. Every product decision is grounded in real infrastructure and real training runs, not theory, which is exactly why we can hand that same infrastructure and expertise to other teams who need reliable compute, sound research, and software built the way we build our own.",
 ]
 
 export default function AboutSection() {

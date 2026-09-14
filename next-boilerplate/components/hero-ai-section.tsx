@@ -61,6 +61,47 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
   )
 }
 
+// Slow-drifting, slowly-spinning rectangle outlines scattered behind the hero content.
+const FLOATING_BOXES = [
+  { top: "8%", left: "6%", size: 120, spinDuration: 22, spinReverse: false, floatDuration: 9, delay: 0 },
+  { top: "62%", left: "10%", size: 70, spinDuration: 16, spinReverse: true, floatDuration: 7.5, delay: 0.6 },
+  { top: "14%", left: "84%", size: 90, spinDuration: 19, spinReverse: false, floatDuration: 8.5, delay: 0.3 },
+  { top: "68%", left: "88%", size: 140, spinDuration: 26, spinReverse: true, floatDuration: 10, delay: 0.9 },
+  { top: "40%", left: "50%", size: 60, spinDuration: 13, spinReverse: false, floatDuration: 6.5, delay: 1.2 },
+] as const
+
+function FloatingBoxes() {
+  return (
+    <div aria-hidden="true" className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      {FLOATING_BOXES.map((box, i) => (
+        <motion.div
+          key={i}
+          className="absolute"
+          style={{ top: box.top, left: box.left, width: box.size, height: box.size }}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: [0, -22, 0] }}
+          transition={{
+            opacity: { duration: 1, delay: box.delay, ease: EASE_OUT },
+            y: {
+              duration: box.floatDuration,
+              delay: box.delay,
+              repeat: Infinity,
+              repeatType: "mirror",
+              ease: "easeInOut",
+            },
+          }}
+        >
+          <motion.div
+            className="w-full h-full rounded-2xl border border-[rgba(55,50,47,0.14)] bg-[rgba(55,50,47,0.02)]"
+            animate={{ rotate: box.spinReverse ? -360 : 360 }}
+            transition={{ duration: box.spinDuration, repeat: Infinity, ease: "linear" }}
+          />
+        </motion.div>
+      ))}
+    </div>
+  )
+}
+
 // Trailing forward-arrow used on the primary CTA pattern
 function ArrowIcon() {
   return (
@@ -125,7 +166,7 @@ export default function HeroAISection() {
       >
         <div className="backdrop-blur-[8.25px] flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
           <motion.a
-            href="#compute-request"
+            href="/#compute-request"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2, ease: EASE_OUT }}
@@ -141,7 +182,7 @@ export default function HeroAISection() {
           </motion.a>
 
           <motion.a
-            href="#research"
+            href="/#research"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2, ease: EASE_OUT }}
@@ -169,6 +210,8 @@ export default function HeroAISection() {
           WebkitMaskImage: "radial-gradient(ellipse 65% 55% at 50% 32%, black 35%, transparent 85%)",
         }}
       />
+
+      <FloatingBoxes />
 
       <div className="w-full max-w-[960px] lg:w-[960px] pt-2 sm:pt-4 pb-6 sm:pb-8 md:pb-10 lg:pb-0 px-2 sm:px-4 md:px-6 lg:px-11 flex flex-col justify-center items-center gap-2 relative z-5 mt-8 sm:mt-12 md:mt-16 lg:mt-16">
         <GpuVisual />

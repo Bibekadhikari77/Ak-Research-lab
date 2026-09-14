@@ -16,8 +16,7 @@ export const siteConfig = {
     email: "akresearchteam@gmail.com",
     phone: "+9876543211",
     phoneDisplay: "9876543211",
-    // TODO: replace with the real registered business address.
-    address: "[ADDRESS PLACEHOLDER — update lib/site-config.ts]",
+    address: "Kalanki, Kathmandu",
   },
   socials: {
     twitter: "#",

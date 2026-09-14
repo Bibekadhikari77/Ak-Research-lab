@@ -105,7 +105,7 @@ export default function ResearchSection() {
             </p>
 
             <motion.a
-              href="#compute-request"
+              href="/#compute-request"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.4 }}

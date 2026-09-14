@@ -1,12 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function MobileStickyCta() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const heroCta = document.querySelector('a[href="#compute-request"]')
+    const heroCta = document.querySelector('a[href="/#compute-request"]')
     if (!heroCta) return
 
     const observer = new IntersectionObserver(
@@ -23,12 +24,12 @@ export default function MobileStickyCta() {
         visible ? "translate-y-0" : "translate-y-24 pointer-events-none"
       }`}
     >
-      <a
-        href="#compute-request"
+      <Link
+        href="/#compute-request"
         className="flex h-12 w-full items-center justify-center rounded-full bg-[#37322F] text-white text-sm font-medium shadow-[0px_8px_24px_rgba(55,50,47,0.28)] hover:bg-[#2A2520] transition-colors"
       >
         Request Compute Access
-      </a>
+      </Link>
     </div>
   )
 }

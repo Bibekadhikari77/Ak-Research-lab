@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import Link from "next/link"
 
 function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
@@ -54,15 +55,15 @@ export default function InfrastructureSection() {
               maintained by the same team that trains on it, optimized for real AI workloads, not just benchmarks.
             </p>
 
-            <a
-              href="#compute-request"
+            <Link
+              href="/#compute-request"
               className="mt-2 px-6 py-[10px] bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center relative hover:bg-[#2A2520] transition-colors"
             >
               <div className="w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"></div>
               <div className="text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans relative">
                 Request Compute Access
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="flex-1 w-full">

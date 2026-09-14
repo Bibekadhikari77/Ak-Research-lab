@@ -1,6 +1,7 @@
 "use client"
 
-import { Github, Linkedin, Mail, Phone, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import Link from "next/link"
 import { siteConfig } from "@/lib/site-config"
 
 function LogoIcon() {
@@ -18,22 +19,22 @@ const SOCIALS = [
 ]
 
 const LAB_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "What We Do", href: "#what-we-do" },
-  { label: "Infrastructure", href: "#infrastructure" },
-  { label: "Research", href: "#research" },
-  { label: "Flagship Product", href: "#product" },
+  { label: "Services", href: "/#services" },
+  { label: "What We Do", href: "/#what-we-do" },
+  { label: "Infrastructure", href: "/#infrastructure" },
+  { label: "Research", href: "/#research" },
+  { label: "Flagship Product", href: "/#product" },
 ]
 
 const COMPANY_LINKS = [
-  { label: "About Us", href: "#about" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Contact", href: "#compute-request" },
+  { label: "About Us", href: "/#about" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Contact", href: "/#compute-request" },
 ]
 
 const GET_STARTED_LINKS = [
-  { label: "Request Compute Access", href: "#compute-request" },
-  { label: "Partner With Our Lab", href: "#compute-request" },
+  { label: "Request Compute Access", href: "/#compute-request" },
+  { label: "Partner With Our Lab", href: "/#compute-request" },
 ]
 
 function FooterLinkColumn({
@@ -49,12 +50,12 @@ function FooterLinkColumn({
       <ul className="space-y-4">
         {links.map((link) => (
           <li key={link.label}>
-            <a
+            <Link
               href={link.href}
               className="text-[15px] font-medium text-[#1E293B] hover:text-[#37322F] transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -92,7 +93,8 @@ function FooterCard() {
                   <Mail className="w-4 h-4 text-[#64748B]" />
                   {siteConfig.contact.email}
                 </a>
-                <p className="text-[14px] text-[#64748B] max-w-[280px] leading-relaxed">
+                <p className="flex items-start gap-2.5 text-[15px] font-medium text-[#1E293B] max-w-[280px] leading-relaxed">
+                  <MapPin className="w-4 h-4 text-[#64748B] shrink-0 mt-0.5" />
                   {siteConfig.contact.address}
                 </p>
               </div>
@@ -121,13 +123,13 @@ function FooterCard() {
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex flex-row gap-8 text-[#64748B] font-medium items-center">
-            <a href="/privacy" className="hover:text-[#1E293B] transition-colors">
+            <Link href="/privacy" className="hover:text-[#1E293B] transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <div className="w-[1px] h-4 bg-slate-300" />
-            <a href="/terms" className="hover:text-[#1E293B] transition-colors">
+            <Link href="/terms" className="hover:text-[#1E293B] transition-colors">
               Terms &amp; Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </div>
