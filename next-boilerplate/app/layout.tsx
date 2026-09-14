@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { Providers } from "@/lib/query/providers";
 import { CookieBanner } from "@/components/cookie-banner";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
@@ -74,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="flex min-h-full flex-col font-sans antialiased">
-        <Providers>{children}</Providers>
+        {children}
         <CookieBanner />
         <Analytics />
       </body>
