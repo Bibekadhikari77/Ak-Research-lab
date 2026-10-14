@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import { LogoMark } from "@/components/layout/logo";
+import { ButtonLink } from "@/components/ui/button-link";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
@@ -9,24 +10,24 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-[#F7F5F3] px-6 py-24 text-center">
-      <div className="mb-6 flex items-center gap-2 font-mono text-xs tracking-wider text-[#8A8580]">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#C4402A]" />
-        AK RESEARCH LAB
-      </div>
-      <h1 className="font-sans text-5xl font-semibold tracking-tight text-[#37322F] sm:text-6xl">
-        404
+    <div className="bg-ink relative isolate flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
+      <div aria-hidden="true" className="bg-tech-grid absolute inset-0 -z-10" />
+      <LogoMark className="mb-8" />
+      <p className="text-gold-300 font-mono text-sm tracking-[0.2em]">404</p>
+      <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        Page not found
       </h1>
-      <p className="mt-4 max-w-sm font-sans text-sm leading-relaxed text-[#605A57] sm:text-base">
-        This page doesn&apos;t exist, or it moved. Let&apos;s get you back to
-        solid ground.
+      <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-300 sm:text-base">
+        This page doesn&apos;t exist, or it has moved.
       </p>
-      <Link
-        href="/"
-        className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-[#37322F] px-8 text-sm font-medium text-white transition-colors hover:bg-[#2A2520]"
-      >
-        Back to Home
-      </Link>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <ButtonLink href="/" size="lg">
+          Back to Home
+        </ButtonLink>
+        <ButtonLink href="/blog" size="lg" variant="outline-dark">
+          Read the blog
+        </ButtonLink>
+      </div>
     </div>
   );
 }

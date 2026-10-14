@@ -14,7 +14,8 @@ export default function OpengraphImage() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "#F7F5F3",
+        background:
+          "linear-gradient(135deg, #080a1c 0%, #171442 60%, #2a2160 100%)",
         padding: "0 96px",
         fontFamily: "sans-serif",
       }}
@@ -33,8 +34,8 @@ export default function OpengraphImage() {
             width: 56,
             height: 56,
             borderRadius: 14,
-            background: "#37322F",
-            color: "white",
+            background: "linear-gradient(135deg, #6f63f3, #3f31a4)",
+            color: "#f8e2b0",
             fontSize: 22,
             fontWeight: 700,
             alignItems: "center",
@@ -48,7 +49,7 @@ export default function OpengraphImage() {
             display: "flex",
             fontSize: 30,
             fontWeight: 600,
-            color: "#37322F",
+            color: "white",
           }}
         >
           {siteConfig.name}
@@ -59,23 +60,23 @@ export default function OpengraphImage() {
           display: "flex",
           fontSize: 56,
           fontWeight: 600,
-          color: "#37322F",
+          color: "white",
           textAlign: "center",
           lineHeight: 1.15,
         }}
       >
-        Powering AI, From Compute to Code
+        Powering AI, From Research to Code
       </div>
       <div
         style={{
           display: "flex",
           marginTop: 28,
           fontSize: 24,
-          color: "#605A57",
+          color: "#cbd5e1",
           textAlign: "center",
         }}
       >
-        GPU infrastructure · Applied AI research · Production-grade engineering
+        Applied AI research · Software engineering · MeroIMS
       </div>
     </div>,
     { ...size },

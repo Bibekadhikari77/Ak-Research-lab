@@ -34,13 +34,13 @@ export function CookieBanner() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-[60] flex justify-center px-4 pb-4 sm:px-6">
-      <div className="flex w-full max-w-2xl flex-col items-start gap-3 rounded-2xl border border-[rgba(55,50,47,0.12)] bg-white p-4 shadow-[0px_8px_30px_rgba(55,50,47,0.16)] sm:flex-row sm:items-center sm:gap-4 sm:p-5">
-        <p className="flex-1 font-sans text-sm leading-6 text-[#605A57]">
+      <div className="flex w-full max-w-2xl flex-col items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_12px_40px_-12px_rgb(15_23_42/0.35)] sm:flex-row sm:items-center sm:gap-4 sm:p-5">
+        <p className="flex-1 font-sans text-sm leading-6 text-slate-600">
           We use cookies to understand site usage and improve AK Research Lab.
           See our{" "}
           <a
             href="/privacy"
-            className="text-[#37322F] underline hover:text-[#2A2520]"
+            className="text-brand-700 hover:text-brand-900 font-medium underline"
           >
             Privacy Policy
           </a>{" "}
@@ -50,14 +50,14 @@ export function CookieBanner() {
           <button
             type="button"
             onClick={() => decide("declined")}
-            className="h-9 flex-1 rounded-full border border-[rgba(55,50,47,0.16)] px-4 text-sm font-medium text-[#37322F] transition-colors hover:bg-[rgba(55,50,47,0.03)] sm:flex-none"
+            className="h-9 flex-1 rounded-full border border-slate-300 px-4 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50 sm:flex-none"
           >
             Decline
           </button>
           <button
             type="button"
             onClick={() => decide("accepted")}
-            className="h-9 flex-1 rounded-full bg-[#37322F] px-4 text-sm font-medium text-white transition-colors hover:bg-[#2A2520] sm:flex-none"
+            className="bg-brand-600 hover:bg-brand-500 h-9 flex-1 rounded-full px-4 text-sm font-medium text-white transition-colors sm:flex-none"
           >
             Accept
           </button>

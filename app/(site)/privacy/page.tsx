@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPageShell title="Privacy Policy" updated="September 14, 2026">
+    <LegalPageShell title="Privacy Policy" updated="October 14, 2026">
       <p>
         This Privacy Policy explains how {siteConfig.legalName} (&quot;
         {siteConfig.name}
@@ -22,9 +22,9 @@ export default function PrivacyPolicyPage() {
       <p>We collect information in the following ways:</p>
       <ul>
         <li>
-          <strong>Information you provide directly:</strong> name, email
-          address, company, and the details you submit through our
-          compute-request / contact form.
+          <strong>Information you provide directly:</strong> your name, work
+          email, organization, inquiry topic, project requirements, and any
+          budget or timeline details you submit through our contact form.
         </li>
         <li>
           <strong>Usage data:</strong> pages visited, time on page, referring
@@ -39,7 +39,8 @@ export default function PrivacyPolicyPage() {
       <h2>How We Use Your Information</h2>
       <ul>
         <li>
-          To respond to compute-access, partnership, and research inquiries.
+          To respond to compute-access, partnership, research, software
+          engineering, and MeroIMS demo inquiries.
         </li>
         <li>To operate, maintain, and improve this website.</li>
         <li>To understand aggregate site usage through analytics.</li>
@@ -57,8 +58,8 @@ export default function PrivacyPolicyPage() {
       <h2>How We Share Information</h2>
       <p>
         We do not sell your personal information. We may share information with
-        service providers who help us operate this site (such as analytics and
-        hosting providers), or when required by law.
+        service providers who help us operate this site (such as analytics,
+        hosting, and form-processing providers), or when required by law.
       </p>
 
       <h2>Data Retention</h2>

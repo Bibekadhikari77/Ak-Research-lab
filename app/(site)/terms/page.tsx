@@ -12,7 +12,7 @@ export default function TermsPage() {
     <LegalPageShell title="Terms and Conditions" updated="September 14, 2026">
       <p>
         These Terms and Conditions (&quot;Terms&quot;) govern your use of the{" "}
-        {siteConfig.name} website operated by {siteConfig.legalName}. By
+        {siteConfig.name} website operated by {siteConfig.legalName} By
         accessing this site or submitting a request through it, you agree to
         these Terms.
       </p>
@@ -31,7 +31,7 @@ export default function TermsPage() {
         Submitting a request through this site does not guarantee access to
         compute resources, a partnership, or any specific outcome. Any resulting
         engagement is subject to a separate written agreement between you and{" "}
-        {siteConfig.legalName}.
+        {siteConfig.legalName}
       </p>
 
       <h2>Intellectual Property</h2>
