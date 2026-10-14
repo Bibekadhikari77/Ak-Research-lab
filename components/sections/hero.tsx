@@ -1,13 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Boxes, Code2, FlaskConical, Workflow } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Boxes,
+  Calculator,
+  Cloud,
+  Code2,
+  Receipt,
+  Sparkles,
+  Store,
+  UtensilsCrossed,
+  Workflow,
+} from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section-heading";
 import { contactHref } from "@/lib/inquiry";
+import { meroimsLinks } from "@/lib/site-config";
+
+const meroimsHighlights = [
+  { Icon: Boxes, label: "Inventory" },
+  { Icon: Receipt, label: "VAT billing" },
+  { Icon: Calculator, label: "Accounting" },
+  { Icon: UtensilsCrossed, label: "Restaurant" },
+  { Icon: Store, label: "Web store" },
+  { Icon: Sparkles, label: "AI assistant" },
+];
 
 const capabilities = [
-  { Icon: FlaskConical, label: "Applied AI Research" },
+  { Icon: Cloud, label: "Cloud Computing" },
   { Icon: Code2, label: "Software Engineering" },
   { Icon: Workflow, label: "Business Automation" },
   { Icon: Boxes, label: "AI Products" },
@@ -29,7 +51,7 @@ export default function Hero() {
         className="bg-brand-600/20 absolute top-0 left-1/2 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full blur-[120px]"
       />
 
-      <Container className="grid items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+      <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-12">
         <div className="animate-in fade-in slide-in-from-bottom-3 flex flex-col items-start gap-7 duration-700">
           <Eyebrow tone="dark">AI Research Lab · Kathmandu, Nepal</Eyebrow>
           <h1
@@ -42,11 +64,9 @@ export default function Hero() {
             </span>
           </h1>
           <p className="max-w-xl text-base leading-7 text-pretty text-slate-300 sm:text-lg sm:leading-8">
-            AK Research Lab combines applied AI research and production-grade
-            software engineering to turn complex technical challenges into
-            practical solutions. We build our own AI-powered products, including
-            MeroIMS, and bring the same expertise to teams building the next
-            generation of AI applications.
+            Applied AI research and production-grade engineering, turned into
+            practical software, including MeroIMS, our AI-powered platform for
+            inventory, billing, and accounting.
           </p>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <ButtonLink href={contactHref()} size="lg" arrow>
@@ -56,16 +76,19 @@ export default function Hero() {
               Explore Our Research
             </ButtonLink>
           </div>
-          <Link
-            href="/solutions"
+          <a
+            href={meroimsLinks.site}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 text-sm font-medium text-emerald-300 transition-colors hover:text-emerald-200"
           >
             Discover MeroIMS
-            <ArrowRight
+            <ArrowUpRight
               aria-hidden="true"
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
-          </Link>
+            <span className="sr-only">(opens meroims.com in a new tab)</span>
+          </a>
         </div>
 
         <div className="animate-in fade-in relative duration-1000">
@@ -75,59 +98,88 @@ export default function Hero() {
               <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
               <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
               <span className="ml-3 font-mono text-[11px] text-slate-500">
-                research · engineering · products
+                app.meroims.com/dashboard
               </span>
             </div>
             <Image
-              src="/Gpu.jpeg"
-              alt="Close-up of a circuit board with glowing data paths"
-              width={1411}
-              height={736}
+              src="/meroims/dashboard.png"
+              alt="MeroIMS dashboard showing revenue, profit, cash position, receivables, stock value, and sales charts"
+              width={1835}
+              height={961}
               priority
-              sizes="(min-width: 1024px) 560px, 100vw"
-              className="aspect-[4/3] w-full object-cover hue-rotate-[50deg] saturate-[0.85] sm:aspect-[16/10]"
+              sizes="(min-width: 1024px) 640px, 100vw"
+              className="h-auto w-full bg-white"
             />
+            <Link
+              href="/solutions"
+              className="group flex items-center gap-3 border-t border-white/10 px-4 py-3 transition-colors hover:bg-white/5"
+            >
+              <Image
+                src="/meroims/logo.png"
+                alt=""
+                width={32}
+                height={32}
+                className="h-8 w-8 shrink-0 rounded-lg bg-white p-1"
+              />
+              <span className="flex min-w-0 flex-1 flex-col">
+                <span className="font-mono text-[10px] tracking-wider text-emerald-300 uppercase">
+                  Built in-house by AK Research Lab
+                </span>
+                <span className="truncate text-sm font-medium text-white">
+                  MeroIMS: AI-powered inventory, accounting &amp; business
+                  management
+                </span>
+              </span>
+              <ArrowRight
+                aria-hidden="true"
+                className="h-4 w-4 shrink-0 text-emerald-300 transition-transform group-hover:translate-x-0.5"
+              />
+            </Link>
           </div>
-
-          <Link
-            href="/solutions"
-            className="group bg-ink/90 absolute -bottom-8 left-4 flex max-w-[280px] items-center gap-3 rounded-xl border border-white/10 p-3 pr-4 shadow-2xl backdrop-blur-md transition-colors hover:border-emerald-400/40 sm:-left-6"
-          >
-            <Image
-              src="/meroims/logo.png"
-              alt=""
-              width={40}
-              height={40}
-              className="h-10 w-10 shrink-0 rounded-lg bg-white p-1"
-            />
-            <span className="flex flex-col">
-              <span className="font-mono text-[10px] tracking-wider text-emerald-300 uppercase">
-                Built in-house by AK Research Lab
-              </span>
-              <span className="text-sm leading-5 font-medium text-white">
-                MeroIMS: AI-powered inventory, accounting &amp; business
-                management
-              </span>
-            </span>
-          </Link>
         </div>
       </Container>
 
       <Container className="mt-20 sm:mt-24">
-        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-4">
-          {capabilities.map(({ Icon, label }) => (
-            <li
-              key={label}
-              className="bg-ink flex items-center gap-3 px-4 py-4 text-sm font-medium text-slate-200 sm:px-5"
-            >
-              <Icon
-                aria-hidden="true"
-                className="text-gold-300 h-4 w-4 shrink-0"
-              />
-              {label}
-            </li>
-          ))}
-        </ul>
+        <div className="overflow-hidden rounded-xl border border-white/10 bg-white/10">
+          <div className="bg-ink flex flex-col gap-3 px-4 pt-4 pb-1 sm:px-5">
+            <p className="font-mono text-[11px] tracking-[0.14em] text-slate-400 uppercase">
+              AK Research Lab
+            </p>
+          </div>
+          <ul className="grid grid-cols-2 gap-px sm:grid-cols-4">
+            {capabilities.map(({ Icon, label }) => (
+              <li
+                key={label}
+                className="bg-ink flex items-center gap-3 px-4 py-4 text-sm font-medium text-slate-200 sm:px-5"
+              >
+                <Icon
+                  aria-hidden="true"
+                  className="text-gold-300 h-4 w-4 shrink-0"
+                />
+                {label}
+              </li>
+            ))}
+          </ul>
+          <div className="bg-ink mt-px flex items-center justify-between gap-3 px-4 pt-4 pb-1 sm:px-5">
+            <p className="font-mono text-[11px] tracking-[0.14em] text-emerald-300/80 uppercase">
+              MeroIMS includes
+            </p>
+          </div>
+          <ul className="grid grid-cols-2 gap-px sm:grid-cols-3 lg:grid-cols-6">
+            {meroimsHighlights.map(({ Icon, label }) => (
+              <li
+                key={label}
+                className="bg-ink flex items-center gap-3 px-4 py-4 text-sm font-medium text-emerald-50 sm:px-5"
+              >
+                <Icon
+                  aria-hidden="true"
+                  className="h-4 w-4 shrink-0 text-emerald-300"
+                />
+                {label}
+              </li>
+            ))}
+          </ul>
+        </div>
       </Container>
     </section>
   );
