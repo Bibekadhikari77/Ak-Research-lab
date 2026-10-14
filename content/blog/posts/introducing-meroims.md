@@ -6,6 +6,8 @@ tags: [meroims, accounting, inventory, vat]
 author: AK Research Lab Team
 publishedAt: 2026-10-07
 status: published
+coverImage: /blog/introducing-meroims.png
+coverAlt: "MeroIMS dashboard showing revenue, profit, receivables, stock value, and cash flow"
 featured: true
 ---
 

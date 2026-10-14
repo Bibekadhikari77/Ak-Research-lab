@@ -6,6 +6,8 @@ tags: [fine-tuning, lora, evaluation, training]
 author: AK Research Lab Team
 publishedAt: 2026-09-22
 status: published
+coverImage: /blog/fine-tuning-checklist.png
+coverAlt: "Illustration of training and validation loss curves beside a fine-tuning checklist"
 ---
 
 Fine-tuning is often treated as the default way to make a model "know" something. Sometimes it is the right tool; often it isn't. This is the checklist we use to keep projects grounded.

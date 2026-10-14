@@ -6,6 +6,8 @@ tags: [gpu, memory, training, inference]
 author: AK Research Lab Team
 publishedAt: 2026-09-30
 status: published
+coverImage: /blog/estimating-gpu-memory.jpg
+coverAlt: "Close-up of a circuit board with illuminated data paths"
 ---
 
 "Will it fit?" is usually the first question in any model project. You can answer it surprisingly well with a few lines of arithmetic before touching any hardware. This guide covers the estimates we use when scoping compute requests.
