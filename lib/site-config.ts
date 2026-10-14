@@ -3,7 +3,7 @@
 // every consumer picks up the change.
 
 // TODO: replace with the real production domain once one exists.
-const SITE_URL = "https://akresearchlab.com"
+const SITE_URL = "https://akresearchlab.com";
 
 export const siteConfig = {
   name: "AK Research Lab",
@@ -23,4 +23,4 @@ export const siteConfig = {
     linkedin: "#",
     github: "#",
   },
-} as const
+} as const;
