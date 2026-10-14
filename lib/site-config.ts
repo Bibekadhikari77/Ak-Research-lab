@@ -9,18 +9,35 @@ export const siteConfig = {
   name: "AK Research Lab",
   legalName: "AK Research Lab Pvt. Ltd.",
   url: SITE_URL,
-  title: "AK Research Lab - Powering AI, From Compute to Code",
+  title: "AK Research Lab — Powering AI, From Research to Code",
   description:
-    "AK Research Lab provides GPU infrastructure, compute access, and deep technical expertise in software engineering and model training, building research-driven solutions like our own AI-powered accounting software.",
+    "AK Research Lab combines applied AI research and production-grade software engineering to turn complex technical challenges into practical solutions. We build our own AI-powered products, including MeroIMS.",
   contact: {
     email: "akresearchteam@gmail.com",
+    // TODO: verify this number before publishing.
     phone: "+9876543211",
     phoneDisplay: "9876543211",
-    address: "Kalanki, Kathmandu",
+    address: "Kathmandu, Nepal",
   },
+  // Leave a value empty to hide that icon in the footer.
   socials: {
-    twitter: "#",
-    linkedin: "#",
-    github: "#",
+    linkedin: "",
+    github: "",
+    twitter: "",
   },
+  // Optional third-party form endpoint (e.g. Formspree) that accepts a JSON
+  // POST. When unset, the contact form falls back to opening a pre-filled
+  // email to `contact.email`, so no inquiry is silently dropped.
+  contactFormEndpoint: process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT ?? "",
+} as const;
+
+// MeroIMS is AK Research Lab's flagship product. Links point to the
+// product's own site, which remains the source of truth for features and
+// pricing.
+export const meroimsLinks = {
+  site: "https://meroims.com",
+  pricing: "https://meroims.com/pricing",
+  register: "https://meroims.com/register",
+  help: "https://meroims.com/help",
+  faqs: "https://meroims.com/faqs",
 } as const;
